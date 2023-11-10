@@ -1,15 +1,21 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#define MAX_SIZE_TITLE 100
+#define MAX_SIZE_DESCRIPTION 100
+#define MAX_SIZE_TIME 100
 
 // Function to extract information between square brackets
-void extractBetweenBrackets(char *start, char *end, char *output)
-{
-    printf("ex call ");
-    if (start != NULL && end != NULL)
-    {
+void extractBetweenBrackets(char *start, char *end, char *output, size_t outputSize) {
+    if (start != NULL && end != NULL) {
         // Calculate the length of the content between square brackets
         size_t length = end - start - 1;
+        
+        // Ensure that the length doesn't exceed the output buffer size
+        if (length >= outputSize) {
+            length = outputSize - 1;
+        }
+
         // Copy the content to the output variable
         strncpy(output, start + 1, length);
         // Null-terminate the extracted content
@@ -20,8 +26,6 @@ void extractBetweenBrackets(char *start, char *end, char *output)
 // Function to extract title from Add command
 void getTitleFromAdd(char *command, char *out_title)
 {
-    printf("title call ");
-
     // FIND FIRST BRACKET FOR <TITLE>
     // Find opening bracket
     char *start = strchr(command, '[');
@@ -40,16 +44,12 @@ void getTitleFromAdd(char *command, char *out_title)
         return;
     }
 
-    
-
-    extractBetweenBrackets(start, end, out_title);
+    extractBetweenBrackets(start, end, out_title, MAX_SIZE_TITLE);
 }
 
 // Function to extract description from Add command
 void getDescriptionFromAdd(char *command, char *out_description)
 {
-    printf("des call ");
-
     // FIND FIRST BRACKET FOR <TITLE> TO SKIP IT
     // Find opening bracket
     char *start = strchr(command, '[');
@@ -86,14 +86,12 @@ void getDescriptionFromAdd(char *command, char *out_description)
         return;
     }
 
-    extractBetweenBrackets(start, end, out_description);
+    extractBetweenBrackets(start, end, out_description, MAX_SIZE_DESCRIPTION);
 }
 
 // Function to extract time from Add command
 void getTimeFromAdd(char *command, char *out_time)
 {
-    printf("time call ");
-
     // FIND FIRST BRACKET FOR <TITLE> TO SKIP IT
     // Find opening bracket
     char *start = strchr(command, '[');
@@ -147,7 +145,7 @@ void getTimeFromAdd(char *command, char *out_time)
         out_time[0] = '\0';
         return;
     }
-    extractBetweenBrackets(start, end, out_time);
+    extractBetweenBrackets(start, end, out_time, MAX_SIZE_TIME);
 }
 
 
@@ -166,9 +164,9 @@ int main() {
     };
 
     for (int i = 0; i < 9; ++i) {
-        char title[100];
-        char description[100];
-        char time[100];
+        char title[MAX_SIZE_TITLE];
+        char description[MAX_SIZE_DESCRIPTION];
+        char time[MAX_SIZE_TIME];
 
         getTitleFromAdd(testCases[i], title);
         getDescriptionFromAdd(testCases[i], description);

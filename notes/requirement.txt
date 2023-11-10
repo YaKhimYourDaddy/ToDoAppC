@@ -5,4 +5,9 @@
 3   checkTitle                                  written         tested
 4   checkDescription                            written         tested   
 5   checkTime                                   written         tested     
+6   getTitleFromEdit                            written         tested
+    getDescriptionFromEdit                      written         tested
+    getTimeFromEdit                             written         tested
+7   getNumFromCommand                           written         tested
+8   getFieldFromEdit                            written         tested
          
