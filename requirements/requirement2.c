@@ -5,6 +5,7 @@
 // Function to extract information between square brackets
 void extractBetweenBrackets(char *start, char *end, char *output)
 {
+    printf("ex call ");
     if (start != NULL && end != NULL)
     {
         // Calculate the length of the content between square brackets
@@ -19,10 +20,19 @@ void extractBetweenBrackets(char *start, char *end, char *output)
 // Function to extract title from Add command
 void getTitleFromAdd(char *command, char *out_title)
 {
-    // Find the first square bracket pair of <title>
+    printf("title call ");
+
+    // FIND FIRST BRACKET FOR <TITLE>
+    // Find opening bracket
     char *start = strchr(command, '[');
+    // Let out_title NULL if can't find opening bracket
+    if (start == NULL)
+    {
+        out_title[0] = '\0';
+        return;
+    }
+    // Find closing bracket
     char *end = strchr(start, ']');
-    
     // Let out_title NULL if can't find closing bracket
     if (end == NULL)
     {
@@ -30,28 +40,46 @@ void getTitleFromAdd(char *command, char *out_title)
         return;
     }
 
+    
+
     extractBetweenBrackets(start, end, out_title);
 }
 
 // Function to extract description from Add command
 void getDescriptionFromAdd(char *command, char *out_description)
 {
-    // Find the first square bracket pair of <title>
+    printf("des call ");
+
+    // FIND FIRST BRACKET FOR <TITLE> TO SKIP IT
+    // Find opening bracket
     char *start = strchr(command, '[');
+    // Let out_description NULL if can't find opening bracket
+    if (start == NULL)
+    {
+        out_description[0] = '\0';
+        return;
+    }
+    // Find closing bracket
     char *end = strchr(start, ']');
-    
-    // Let out_description NULL if can't find closing bracket for title
+    // Let out_description NULL if can't find closing bracket
     if (end == NULL)
     {
         out_description[0] = '\0';
         return;
     }
 
-    // Find the second square bracket pair of <description>
-    start = strchr(end + 1, '[');
+    // FIND SECOND BRACKET FOR <DESCRIPTION>
+    // Find opening bracket
+    start = strchr(end, '[');
+    // Let out_description NULL if can't find opening bracket
+    if (start == NULL)
+    {
+        out_description[0] = '\0';
+        return;
+    }
+    // Find closing bracket
     end = strchr(start, ']');
-
-    // Let out_description NULL if can't find closing bracket for description
+    // Let out_description NULL if can't find closing bracket
     if (end == NULL)
     {
         out_description[0] = '\0';
@@ -64,39 +92,61 @@ void getDescriptionFromAdd(char *command, char *out_description)
 // Function to extract time from Add command
 void getTimeFromAdd(char *command, char *out_time)
 {
-    // Find the first square bracket pair of <title>
+    printf("time call ");
+
+    // FIND FIRST BRACKET FOR <TITLE> TO SKIP IT
+    // Find opening bracket
     char *start = strchr(command, '[');
+    // Let out_time NULL if can't find opening bracket
+    if (start == NULL)
+    {
+        out_time[0] = '\0';
+        return;
+    }
+    // Find closing bracket
     char *end = strchr(start, ']');
-    
-    // Let out_time NULL if can't find closing bracket for title
+    // Let out_time NULL if can't find closing bracket
     if (end == NULL)
     {
         out_time[0] = '\0';
         return;
     }
 
-    // Find the second square bracket pair of <description>
-    start = strchr(end + 1, '[');
+    // FIND SECOND BRACKET FOR <DESCRIPTION> TO SKIP IT
+    // Find opening bracket
+    start = strchr(end, '[');
+    // Let out_time NULL if can't find opening bracket
+    if (start == NULL)
+    {
+        out_time[0] = '\0';
+        return;
+    }
+    // Find closing bracket
     end = strchr(start, ']');
-
-    // Let out_time NULL if can't find closing bracket for description
+    // Let out_time NULL if can't find closing bracket
     if (end == NULL)
     {
         out_time[0] = '\0';
         return;
     }
-        
-    // Find the third square bracket pair of <time>
-    start = strchr(end + 1, '[');
+
+    // FIND THIRD BRACKET FOR <TIME>
+    // Find opening bracket
+    start = strchr(end, '[');
+    // Let out_time NULL if can't find opening bracket
+    if (start == NULL)
+    {
+        out_time[0] = '\0';
+        return;
+    }
+    // Find closing bracket
     end = strchr(start, ']');
-
-    // Let out_time NULL if can't find closing bracket for time
+    // Let out_time NULL if can't find closing bracket
     if (end == NULL)
     {
         out_time[0] = '\0';
         return;
     }
-
     extractBetweenBrackets(start, end, out_time);
 }
 
@@ -112,10 +162,10 @@ int main() {
         "Add [[] [] []] [description] [time"  ,  // invalid
         "Add [[] [] []] [description] time]"   , // invalid
         "Add [[] []] [[]] [time]"    ,// valid
-        "Add [[title] [description] [time]]"  ,  // invalid
+        "Add [[title] [description] [time]]"   // valid
     };
 
-    for (int i = 0; i < 7; ++i) {
+    for (int i = 0; i < 9; ++i) {
         char title[100];
         char description[100];
         char time[100];
@@ -125,9 +175,12 @@ int main() {
         getTimeFromAdd(testCases[i], time);
 
         printf("\nTest Case %d:\n", i + 1);
-        printf("Title: %s\n", title);
-        printf("Description: %s\n", description);
-        printf("Time: %s\n\n", time);
+        if (title != NULL)
+            printf("Title: %s\n", title);
+        if (description != NULL)
+            printf("Description: %s\n", description);
+        if (time != NULL)
+            printf("Time: %s\n", time);
     }
 
     return 0;

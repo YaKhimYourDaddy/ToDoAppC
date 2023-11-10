@@ -1,4 +1,8 @@
-1   getCommandType                       
-2   getTitleFromAdd                             written
-    getDescriptionFromAdd                       written
-    getTimeFromAdd                              written
+1   getCommandType                              written         tested
+2   getTitleFromAdd                             written         tested
+    getDescriptionFromAdd                       written         tested
+    getTimeFromAdd                              written         tested
+3   checkTitle                                  written         tested
+4   checkDescription                            written         tested   
+5   checkTime                                   written         tested     
+         
