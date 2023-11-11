@@ -1,13 +1,25 @@
-1   getCommandType                              written         tested
-2   getTitleFromAdd                             written         tested
-    getDescriptionFromAdd                       written         tested
-    getTimeFromAdd                              written         tested
-3   checkTitle                                  written         tested
-4   checkDescription                            written         tested   
-5   checkTime                                   written         tested     
-6   getTitleFromEdit                            written         tested
-    getDescriptionFromEdit                      written         tested
-    getTimeFromEdit                             written         tested
-7   getNumFromCommand                           written         tested
-8   getFieldFromEdit                            written         tested
+1   0.3     getCommandType                              written         tested
+2   0.6     getTitleFromAdd                             written         tested
+            getDescriptionFromAdd                       written         tested
+            getTimeFromAdd                              written         tested
+3   0.4     checkTitle                                  written         tested
+4   0.4     checkDescription                            written         tested   
+5   0.5     checkTime                                   written         tested     
+6   0.6     getTitleFromEdit                            written         tested
+            getDescriptionFromEdit                      written         tested
+            getTimeFromEdit                             written         tested
+7   0.3     getNumFromCommand                           written         tested
+8   0.3     getFieldFromEdit                            written         tested
+9   0.3     getStatusFromEdit                           written         tested
+10  0.3     printAllTasks                               written         tested
+11  0.3     printTaskByNum                              written         tested
+12  0.4     printHeadTasks                              written         tested
+13  0.4     printTailTasks                              written         tested
+14  0.5     printFilteredTasksByTitle                   written         tested
+15  0.5     printFilteredTasksByDescription             written         tested
+16  0.4     printFilteredTasksByStatus                  written         tested
+17  0.4     addTask                                     written         tested                
+18  0.4     deleteTask                                  written         tested
+19  2.0     getFieldFromEdit                            
+20  0.7     getFieldFromEdit                            
          
