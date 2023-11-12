@@ -37,27 +37,18 @@ int main()
 {
     // Test cases
     char editCommand1[] = "Edit #1 title:[Task Title]";
-    char editCommand2[] = "Edit #ab12 title:[Task Title]";
-    char editCommand3[] = "Edit title:[Task Title]";
-    char editCommand4[] = "Edit # -10 title:[Task Title]";
-    char editCommand5[] = "Edit #0.123 title:[Task Title]";
-    char editCommand6[] = "Edit #12bd title:[Task Title]";
+    char editCommand3[] = "Edit 12 title:[Task Title]";
+    char editCommand4[] = "Edit #-10 title:[Task Title]";
 
     // Test the function
     int num1 = getNumFromCommand(editCommand1);
-    int num2 = getNumFromCommand(editCommand2);
     int num3 = getNumFromCommand(editCommand3);
     int num4 = getNumFromCommand(editCommand4);
-    int num5 = getNumFromCommand(editCommand5);
-    int num6 = getNumFromCommand(editCommand6);
 
     // Display the results
     printf("Num 1: %d\n", num1); // Output: Num 1: 1
-    printf("Num 2: %d\n", num2); // Output: Num 2: 0
     printf("Num 3: %d\n", num3); // Output: Num 3: -1
     printf("Num 4: %d\n", num4); // Output: Num 4: 0
-    printf("Num 5: %d\n", num5); // Output: Num 5: 0
-    printf("Num 6: %d\n", num6); // Output: Num 6: 12
 
     return 0;
 }

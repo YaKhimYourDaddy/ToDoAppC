@@ -17,15 +17,15 @@ CommandType getCommandType(char *command) {
     char firstWord[10];
 
     // Extract the first word from the command
-    int i = 0;
-    while (command[i] != '\0' && command[i] != ' ' && i < 10) {
-        firstWord[i] = command[i];
-        i++;
-    }
-    firstWord[i] = '\0';
+    // int i = 0;
+    // while (command[i] != '\0' && command[i] != ' ' && i < 10) {
+    //     firstWord[i] = command[i];
+    //     i++;
+    // }
+    // firstWord[i] = '\0';
     // You can use this below line instead above code 
     // if you want " Quit" is QUIT instead of INVALID
-    // sscanf(command, "%s", firstWord);
+    sscanf(command, "%s", firstWord);
 
 
     // Compare the first word with command types
@@ -56,7 +56,7 @@ int main() {
     char command9[] = "SHOW all";
     char command10[] = "Dele";
     char command11[] = "  Quit ";
-    char command12[] = "ohasodhasd";
+    char command12[] = "random string";
 
     // Test cases
     printf("Command 1 Type: %d\n", getCommandType(command1));

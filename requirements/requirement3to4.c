@@ -2,11 +2,11 @@
 #include <string.h>
 #include <ctype.h>
 
-#define MAX_TITLE_LENGTH 100
-#define MAX_DESCRIPTION_LENGTH 200
+#define MAX_SIZE_TITLE 100
+#define MAX_SIZE_DESCRIPTION 200
 
 // Function to check if the string is valid
-int checkValidity(char *raw_string, size_t max_length) {
+int checkValidtTitleAndDescription(char *raw_string, size_t max_length) {
     // Check if the string violates the maximum length condition
     size_t length = strlen(raw_string);
     if (length > max_length) {
@@ -42,12 +42,12 @@ int checkValidity(char *raw_string, size_t max_length) {
 
 // Function to check if the title is valid
 int checkTitle(char *raw_title) {
-    return checkValidity(raw_title, MAX_TITLE_LENGTH);
+    return checkValidtTitleAndDescription(raw_title, MAX_SIZE_TITLE);
 }
 
 // Function to check if the description is valid
 int checkDescription(char *raw_description) {
-    return checkValidity(raw_description, MAX_DESCRIPTION_LENGTH);
+    return checkValidtTitleAndDescription(raw_description, MAX_SIZE_DESCRIPTION);
 }
 
 int main() {
@@ -60,7 +60,7 @@ int main() {
 
     char validDescription[] = "This is a valid description.";
     char invalidMaxLengthDescription[] = "A very long description exceeding the maximum lengthhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh.";
-    char invalidCharacterDescription[] = "Invalid#Description";
+    char invalidCharacterDescription[] = "Invalid#CharacterInDescription";
     char invalidStartWhitespaceDescription[] = " Invalid Start Whitespace";
     char invalidEndWhitespaceDescription[] = "Invalid End Whitespace ";
 

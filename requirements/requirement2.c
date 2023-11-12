@@ -2,8 +2,8 @@
 #include <string.h>
 #include <stdbool.h>
 #define MAX_SIZE_TITLE 100
-#define MAX_SIZE_DESCRIPTION 100
-#define MAX_SIZE_TIME 100
+#define MAX_SIZE_DESCRIPTION 200
+#define MAX_SIZE_TIME 33
 
 // Function to extract information between square brackets
 void extractBetweenBrackets(char *start, char *end, char *output, size_t outputSize) {

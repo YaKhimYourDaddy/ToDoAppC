@@ -2,8 +2,8 @@
 #include <string.h>
 
 #define MAX_SIZE_TITLE 100
-#define MAX_SIZE_DESCRIPTION 100
-#define MAX_SIZE_TIME 100
+#define MAX_SIZE_DESCRIPTION 200
+#define MAX_SIZE_TIME 33
 
 // Enum to represent task statuses
 typedef enum
@@ -132,8 +132,7 @@ void printFilteredTasksByStatus(struct Task *array_tasks, int no_tasks, Status f
     }
 }
 
-// have not handle:
-//
+
 int main()
 {
     // Example usage
@@ -154,158 +153,158 @@ int main()
 
     int num_tasks = sizeof(tasks) / sizeof(tasks[0]);
 
-    // printf("\nprintAllTasks(tasks, num_tasks);");
-    // printAllTasks(tasks, num_tasks);
+    printf("\nprintAllTasks(tasks, num_tasks);");
+    printAllTasks(tasks, num_tasks);
 
 
 
 
-    // printf("\nprintTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), 2);\n");
-    // printTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), 2);
+    printf("\nprintTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), 2);\n");
+    printTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), 2);
 
-    // printf("\nprintTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);\n");
-    // printTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);
+    printf("\nprintTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);\n");
+    printTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);
 
-    // printf("\nprintTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);\n");
-    // printTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);
+    printf("\nprintTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);\n");
+    printTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);
 
-    // printf("\nprintTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), num_task + 1);\n");
-    // printTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), num_tasks + 1);
-
-
-
-
-    // printf("\nprintHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 2);\n");
-    // printHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 2);
-
-    // printf("\nprintHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), num_task + 1);\n");
-    // printHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), num_tasks + 1);
-
-    // printf("\nprintHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);\n");
-    // printHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);
-
-    // printf("\nprintHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);\n");
-    // printHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);
+    printf("\nprintTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), num_task + 1);\n");
+    printTaskByNum(tasks, sizeof(tasks) / sizeof(tasks[0]), num_tasks + 1);
 
 
 
 
-    // printf("\nprintTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), num_task + 1);\n");
-    // printTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), num_tasks + 1);
+    printf("\nprintHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 2);\n");
+    printHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 2);
 
-    // printf("\nprintTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 3);\n");
-    // printTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 3);
+    printf("\nprintHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), num_task + 1);\n");
+    printHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), num_tasks + 1);
 
-    // printf("\nprintTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);\n");
-    // printTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);
+    printf("\nprintHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);\n");
+    printHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);
 
-    // printf("\nprintTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);\n");
-    // printTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);
-
-
+    printf("\nprintHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);\n");
+    printHeadTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);
 
 
-    // printf("\nprintFilteredTasksByTitle(); // Title\n");
-    // printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), "Title");
 
-    // printf("\nprintFilteredTasksByTitle(); // Title 1\n");
-    // printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), "Title 1");
 
-    // printf("\nprintFilteredTasksByTitle(); // title 1\n");
-    // printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), "title 1");
+    printf("\nprintTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), num_task + 1);\n");
+    printTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), num_tasks + 1);
 
-    // printf("\nprintFilteredTasksByTitle(); // Task 12222\n");
-    // printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), "Task 12222");
+    printf("\nprintTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 3);\n");
+    printTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 3);
 
-    // printf("\nprintFilteredTasksByTitle(); // null string\n");
-    // printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), ""); // valid input, print all
+    printf("\nprintTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);\n");
+    printTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);
 
-    // printf("\nprintFilteredTasksByTitle(); // null string or null terminator\n");
-    // printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), ""); // valid input, print all
+    printf("\nprintTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);\n");
+    printTailTasks(tasks, sizeof(tasks) / sizeof(tasks[0]), 0);
 
-    // printf("\nprintFilteredTasksByTitle(); // null pointer\n");
-    // printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), NULL); // valid input until strstr() so I print all, no need to run into strstr()
 
-    // printf("\nprintFilteredTasksByTitle(); // number but be treated as character by ascii\n");
-    // printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), 61); // invalid input to us but not to the compiler, warning, still run, stop right after passing arguments, print nothing
+
+
+    printf("\nprintFilteredTasksByTitle(); // Title\n");
+    printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), "Title");
+
+    printf("\nprintFilteredTasksByTitle(); // Title 1\n");
+    printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), "Title 1");
+
+    printf("\nprintFilteredTasksByTitle(); // title 1\n");
+    printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), "title 1");
+
+    printf("\nprintFilteredTasksByTitle(); // Task 12222\n");
+    printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), "Task 12222");
+
+    printf("\nprintFilteredTasksByTitle(); // null string\n");
+    printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), ""); // valid input, print all
+
+    printf("\nprintFilteredTasksByTitle(); // null string or null terminator\n");
+    printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), ""); // valid input, print all
+
+    printf("\nprintFilteredTasksByTitle(); // null pointer\n");
+    printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), NULL); // valid input until strstr() so I print all, no need to run into strstr()
+
+    printf("\nprintFilteredTasksByTitle(); // number but be treated as character by ascii\n");
+    printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), 61); // invalid input to us but not to the compiler, warning, still run, stop right after passing arguments, print nothing
 
     
     
     
-    // printf("\nprintFilteredTasksByDescription(); // Des\n");
-    // printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), "Des");
+    printf("\nprintFilteredTasksByDescription(); // Des\n");
+    printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), "Des");
 
-    // printf("\nprintFilteredTasksByDescription(); // Description 1\n");
-    // printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), "Description 1");
+    printf("\nprintFilteredTasksByDescription(); // Description 1\n");
+    printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), "Description 1");
 
-    // printf("\nprintFilteredTasksByDescription(); // description 1\n");
-    // printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), "description 1");
+    printf("\nprintFilteredTasksByDescription(); // description 1\n");
+    printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), "description 1");
 
-    // printf("\nprintFilteredTasksByDescription(); // Description 12222\n");
-    // printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), "Description 12222");
+    printf("\nprintFilteredTasksByDescription(); // Description 12222\n");
+    printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), "Description 12222");
 
-    // printf("\nprintFilteredTasksByDescription(); // null string\n");
-    // printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), ""); // valid input, print all
+    printf("\nprintFilteredTasksByDescription(); // null string\n");
+    printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), ""); // valid input, print all
 
-    // printf("\nprintFilteredTasksByDescription(); // null string or null terminator\n");
-    // printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), ""); // valid input, print all
+    printf("\nprintFilteredTasksByDescription(); // null string or null terminator\n");
+    printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), ""); // valid input, print all
 
-    // printf("\nprintFilteredTasksByDescription(); // null pointer\n");
-    // printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), NULL); // valid input until strstr() so I print all, no need to run into strstr()
+    printf("\nprintFilteredTasksByDescription(); // null pointer\n");
+    printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), NULL); // valid input until strstr() so I print all, no need to run into strstr()
 
-    // printf("\nprintFilteredTasksByDescription(); // number but be treated as character by ascii\n");
-    // printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), 61); // invalid input to us but not to the compiler, warning, still run, stop right after passing arguments, print nothing
+    printf("\nprintFilteredTasksByDescription(); // number but be treated as character by ascii\n");
+    printFilteredTasksByDescription(tasks, sizeof(tasks) / sizeof(tasks[0]), 61); // invalid input to us but not to the compiler, warning, still run, stop right after passing arguments, print nothing
     
     
     
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), DONE);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), DONE);
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), DONE);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), DONE);
         
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), IN_PROGRESS);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), IN_PROGRESS);
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), IN_PROGRESS);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), IN_PROGRESS);
         
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ARCHIVED);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ARCHIVED);
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ARCHIVED);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ARCHIVED);
         
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), INVALID_STATUS);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), INVALID_STATUS);
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), INVALID_STATUS);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), INVALID_STATUS);
         
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 1);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 1);
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 1);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 1);
         
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), -1); 
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), -1);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), -1); 
 
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 4);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 4);
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 4);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 4);
 
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 0.2);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 0.2);
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 0.2);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), 0.2);
 
-    // enum AnotherEnum {
-    //     ITEM1,
-    //     ITEM2,
-    //     ITEM3,
-    //     ITEM4,
-    //     ITEM5
-    // };
-    // enum AnotherEnum anotherEnumElement1 = ITEM1;
-    // enum AnotherEnum anotherEnumElement2 = ITEM2;
-    // enum AnotherEnum anotherEnumElement5 = ITEM5;
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement1);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement1);
+    enum AnotherEnum {
+        ITEM1,
+        ITEM2,
+        ITEM3,
+        ITEM4,
+        ITEM5
+    };
+    enum AnotherEnum anotherEnumElement1 = ITEM1;
+    enum AnotherEnum anotherEnumElement2 = ITEM2;
+    enum AnotherEnum anotherEnumElement5 = ITEM5;
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement1);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement1);
     
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement2);\n"); 
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement2); // to see if there's a problem after first test
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement2);\n"); 
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement2); // to see if there's a problem after first test
 
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement5);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement5); // out of range, no show, still run, no crash
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement5);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), anotherEnumElement5); // out of range, no show, still run, no crash
 
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ITEM1);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ITEM1); // still valid like anotherEnumElement1
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ITEM1);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ITEM1); // still valid like anotherEnumElement1
 
-    // printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ITEM5);\n");
-    // printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ITEM5); // out of range, no show, still run, no crash
+    printf("\nprintFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ITEM5);\n");
+    printFilteredTasksByStatus(tasks, sizeof(tasks) / sizeof(tasks[0]), ITEM5); // out of range, no show, still run, no crash
 
 
     return 0;

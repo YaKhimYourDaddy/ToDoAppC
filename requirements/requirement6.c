@@ -91,16 +91,16 @@ void getTimeFromEdit(char *command, char *out_time) {
 
 int main() {
     // Test cases
-    // char editCommand1[] = "Edit #1 title:[Task Title]";
-    // char editCommand2[] = "Edit #2 description:[Task Description]";
-    // char editCommand3[] = "Edit #3 time:[Task Time]";
+    // char editCommand1[] = "Edit #1 title:[Valid Task Title]";
+    // char editCommand2[] = "Edit #2 description:[Valid Task Description]";
+    // char editCommand3[] = "Edit #3 time:[Valid Task Time]";
 
     // char editCommand1[] = "Edit #1 title:[Task Title";
     // char editCommand2[] = "Edit #2 description:Task Description]";
     // char editCommand3[] = "Edit #3 time:[T]ask Time]";
     
     // Only copy until reaching the max length to prevent unpredictable problems for next time we call extractBetweenBrackets()
-    char editCommand1[] = "Edit #1 title:[Task Title with length longer than max length for titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee]";
+    char editCommand1[] = "Edit #1 title:[Valid Task Title with length longer than MAX_SIZE_TITLE and copy only first 99 character, 1 for null-terminated-------end]";
     char editCommand2[] = "Edit #2 description:[Task Description]";
     char editCommand3[] = "Edit #3 time:[Task Time]";
 

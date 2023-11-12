@@ -1,10 +1,10 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdio.h>
-#define MAX_NO_TASKS 100
+#define MAX_NO_TASKS 99
 #define MAX_SIZE_TITLE 100
-#define MAX_SIZE_DESCRIPTION 100
-#define MAX_SIZE_TIME 100
+#define MAX_SIZE_DESCRIPTION 200
+#define MAX_SIZE_TIME 33
 // Enum to represent task statuses
 typedef enum {
     IN_PROGRESS,
