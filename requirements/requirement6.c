@@ -105,9 +105,9 @@ int main() {
     char editCommand3[] = "Edit #3 time:[Task Time]";
 
     // Declare variables to store extracted information
-    char title[MAX_SIZE_TITLE];
-    char description[MAX_SIZE_DESCRIPTION];
-    char time[MAX_SIZE_TIME];
+    char title[MAX_SIZE_TITLE] = "\0";
+    char description[MAX_SIZE_DESCRIPTION] = "\0";
+    char time[MAX_SIZE_TIME] = "\0";
 
     // Test the functions
     getTitleFromEdit(editCommand1, title);

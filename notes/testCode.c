@@ -1,27 +1,32 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#define MAX_NO_TASKS 100
 
-void extractBetweenBrackets(char *start, char *end, char *output) {
-    if (start != NULL && end != NULL) {
-        // Calculate the length of the content between square brackets
-        size_t length = end - start - 1;
-        // Copy the content to the output variable
-        strncpy(output, start + 1, length);
-        // Ensure null termination
-        output[length] = '\0';
+bool addTask(struct Task *array_tasks, int no_tasks, char *new_title, char *new_description, char *new_time)
+{
+    size_t arraySize = sizeof(array_tasks) / sizeof(array_tasks[0]);
+    if (arraySize < MAX_NO_TASKS)
+    {
+        // Reallocate the array with size of MAX_NO_TASKS
+        // Copy old elements
+        // Add new elements
     }
+
+    // Check if there is space for a new task
+    if (no_tasks > MAX_NO_TASKS)
+        return false;
+
+    // Set values for the new task
+    (array_tasks[no_tasks])->num = no_tasks + 1;
+    safeStringCopy(array_tasks[no_tasks]->title, new_title, MAX_SIZE_TITLE);
+    safeStringCopy(array_tasks[no_tasks]->description, new_description, MAX_SIZE_DESCRIPTION);
+    safeStringCopy(array_tasks[no_tasks]->time, new_time, MAX_SIZE_TIME);
+    (array_tasks[no_tasks])->status = IN_PROGRESS;
+    return true;
+    
 }
 
-int main() {
-    // Test case
-    char input[] = "[Some content that is larger than the destination]";
-    char output[20];  // Destination with limited space
 
-    // Call the function
-    extractBetweenBrackets(input, strchr(input, '['), output);
 
-    // Print the result
-    printf("Extracted: %s\n", output);
-
-    return 0;
-}

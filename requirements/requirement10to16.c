@@ -220,7 +220,7 @@ int main()
     printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), ""); // valid input, print all
 
     printf("\nprintFilteredTasksByTitle(); // null string or null terminator\n");
-    printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), ""); // valid input, print all
+    printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), "\0"); // valid input, print all
 
     printf("\nprintFilteredTasksByTitle(); // null pointer\n");
     printFilteredTasksByTitle(tasks, sizeof(tasks) / sizeof(tasks[0]), NULL); // valid input until strstr() so I print all, no need to run into strstr()

@@ -163,21 +163,21 @@ int main() {
         "Add [[title] [description] [time]]"   // valid
     };
 
-    for (int i = 0; i < 9; ++i) {
-        char title[MAX_SIZE_TITLE];
-        char description[MAX_SIZE_DESCRIPTION];
-        char time[MAX_SIZE_TIME];
+    for (int i = 0; i < 10; ++i) {
+        char title[MAX_SIZE_TITLE] = "\0";
+        char description[MAX_SIZE_DESCRIPTION] = "\0";
+        char time[MAX_SIZE_TIME] = "\0";
 
         getTitleFromAdd(testCases[i], title);
         getDescriptionFromAdd(testCases[i], description);
         getTimeFromAdd(testCases[i], time);
 
         printf("\nTest Case %d:\n", i + 1);
-        if (title != NULL)
+        if (title[0] = '\0')
             printf("Title: %s\n", title);
-        if (description != NULL)
+        if (description[0] != '\0')
             printf("Description: %s\n", description);
-        if (time != NULL)
+        if (time[0] != '\0')
             printf("Time: %s\n", time);
     }
 

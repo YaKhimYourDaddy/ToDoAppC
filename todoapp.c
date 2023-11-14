@@ -806,46 +806,41 @@ void copyTask(struct Task *dest, const struct Task *src)
     safeStringCopy(dest->description, src->description, sizeof(dest->description));
     dest->status = src->status;
 }
-// Function to add a new task to the array
-bool addTask(struct Task *array_tasks, int no_tasks, char *new_title, char *new_description, char *new_time)
-{
-    size_t arraySize = sizeof(array_tasks) / sizeof(array_tasks[0]);
-    if (arraySize < MAX_NO_TASKS)
-    {
-        // Reallocate the array with size of MAX_NO_TASKS
-        struct Task new_array[MAX_NO_TASKS];
-        if (new_array == NULL) {
-            printf("Memory allocation failed.\n");
-        }
+// // Function to add a new task to the array
+bool addTask(struct Task **array_tasks, int no_tasks, char *new_title, char *new_description, char *new_time) {}
+// {
+//     size_t arraySize = sizeof(array_tasks) / sizeof(array_tasks[0]);
+//     if (arraySize < MAX_NO_TASKS)
+//     {
+//         // Reallocate the array with size of MAX_NO_TASKS
+//         struct Task *new_array = (struct Task *)malloc(MAX_NO_TASKS * sizeof(struct Task));
+//         for (int i = 0; i < no_tasks; i++)
+//         {
+//             addTask(new_array, i, *array_tasks[i]->title, *array_tasks[i]->description, *array_tasks[i]->time);
+//         }
+//         *array_tasks = new_array;
+//         return addTask(*array_tasks, no_tasks, new_title, new_description, new_time);
+//     }
 
+//     // Check if there is space for a new task
+//     if (no_tasks > MAX_NO_TASKS)
+//         return false;
 
-        for (int i = 0; i < no_tasks; i++)
-        {
-            addTask(new_array, i, array_tasks[i].title, array_tasks[i].description, array_tasks[i].time);
-        }
-        array_tasks = new_array;
-        return addTask(array_tasks, no_tasks, new_title, new_description, new_time);
-    }
-
-    // Check if there is space for a new task
-    if (no_tasks > MAX_NO_TASKS)
-        return false;
-
-    // Set values for the new task
-    (array_tasks[no_tasks]).num = no_tasks + 1;
-    safeStringCopy(array_tasks[no_tasks].title, new_title, MAX_SIZE_TITLE);
-    safeStringCopy(array_tasks[no_tasks].description, new_description, MAX_SIZE_DESCRIPTION);
-    safeStringCopy(array_tasks[no_tasks].time, new_time, MAX_SIZE_TIME);
-    (array_tasks[no_tasks]).status = IN_PROGRESS;
-    return true;
+//     // Set values for the new task
+//     (array_tasks[no_tasks])->num = no_tasks + 1;
+//     safeStringCopy(array_tasks[no_tasks]->title, new_title, MAX_SIZE_TITLE);
+//     safeStringCopy(array_tasks[no_tasks]->description, new_description, MAX_SIZE_DESCRIPTION);
+//     safeStringCopy(array_tasks[no_tasks]->time, new_time, MAX_SIZE_TIME);
+//     (array_tasks[no_tasks])->status = IN_PROGRESS;
+//     return true;
     
-}
+// }
 
-// ============================================
-// REQUIREMENT 18
+// // ============================================
+// // REQUIREMENT 18
 
 
-// Function to delete a task by num
+// // Function to delete a task by num
 bool deleteTask(struct Task *array_tasks, int no_tasks, int num)
 {
     // Check if the task with the given num exists
@@ -907,23 +902,6 @@ void runTodoApp() {
 }
 
 int main() {
-    printf("----- Sample testcase 19 -----\n");
-    printf("Test addTask:\n");
-    struct Task array_tasks[6] = { // extra slot for new task, 6 should be replaced by MAX_NO_TASKS
-        {1, "Course Intro to Programming - apple", "Room 701-H6 - orange", "07:00|01/10/2023-12:00|01/10/2023", IN_PROGRESS},
-        {2, "Course Intro to Programming - banana", "Room 701-H6 - apple", "07:00|01/10/2023-12:00|01/10/2023", DONE},
-        {3, "Course Intro to Programming - apple", "Room 701-H6 - orange", "07:00|01/10/2023-12:00|01/10/2023", ARCHIVED},
-        {4, "Course Intro to Programming - banana", "Room 701-H6 - orange", "07:00|01/10/2023-12:00|01/10/2023", IN_PROGRESS},
-        {5, "Course Intro to Programming - apple", "Room 701-H6 - banana", "07:00|01/10/2023-12:00|01/10/2023", DONE},
-    };
-    int no_tasks = 5;
-    if (addTask(array_tasks, 5, "Course Intro to Programming - apple", "Room 701-H6 - orange", "07:00|01/10/2023-12:00|01/10/2023")) {
-        ++no_tasks;
-        printf("Add task successfully\n");
-        printAllTasks(array_tasks, no_tasks);
-    }
-    else {
-        printf("Add task failed\n");
-    }
+    runTodoApp();
     return 0;
 }
